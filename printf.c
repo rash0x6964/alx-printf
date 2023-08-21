@@ -12,6 +12,10 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 	int	len;
 
 	len = 0;
+
+	while(str[loc->i] == ' ')
+		loc->i++;
+
 	if (!str[loc->i])
 		return (-1);
 	if (str[loc->i] == 'c')
