@@ -38,6 +38,9 @@ int _printf(const char *format, ...)
 
 	loc.i = 0;
 	loc.glen = 0;
+	if (!format)
+		return (-1);
+
 	while (format[loc.i])
 	{
 		if (format[loc.i] == '%')
