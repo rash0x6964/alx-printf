@@ -15,7 +15,6 @@ typedef struct s_locals
 	int glen;
 } t_locals;
 
-static int checks(va_list argp, const char *str, t_locals *loc);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _putstr(char *s);
