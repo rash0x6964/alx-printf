@@ -11,8 +11,8 @@
  */
 typedef struct s_locals
 {
- int i;
- int glen;
+	int i;
+	int glen;
 } t_locals;
 
 static int checks(va_list argp, const char *str, t_locals *loc);
