@@ -13,7 +13,7 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 
 	len = 0;
 	if (!str[loc->i])
-		return (0);
+		return (-1);
 	if (str[loc->i] == 'c')
 		len = _putchar(va_arg(argp, int));
 	else if (str[loc->i] == 's')
