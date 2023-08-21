@@ -20,8 +20,6 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 		len = _putstr(va_arg(argp, char *));
 	else if (str[loc->i] == '%')
 		len = _putchar(str[loc->i]);
-	else
-		len = _putchar(str[loc->i]);
 	loc->i++;
 	return (len);
 }
@@ -31,7 +29,6 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
  * @format: character string
  * Return: length of the out_put
  */
-
 int _printf(const char *format, ...)
 {
 	va_list		argp;
