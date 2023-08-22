@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 {
 	va_list		argp;
 	t_locals	loc;
+	int res;
 
 	va_start(argp, format);
 
@@ -47,7 +48,10 @@ int _printf(const char *format, ...)
 		if (format[loc.i] == '%')
 		{
 			loc.i++;
-			loc.glen += checks(argp, format, &loc);
+			res = checks(argp, format, &loc);
+			if (res == -1)
+				return (-1);
+			loc.glen += res;
 		}
 		else
 		{
