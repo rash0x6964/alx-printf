@@ -18,7 +18,10 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 	else if (str[loc->i] == 's')
 		len = _putstr(va_arg(argp, char *));
 	else
-		len = _putchar(str[loc->i]);
+	{
+		len = _putchar('%');
+		len += _putchar(str[loc->i]);
+	}
 	loc->i++;
 	return (len);
 }
