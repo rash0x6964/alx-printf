@@ -7,7 +7,7 @@
  * @array: your base as array
  * Return: length of number
  */
-int _putNbBase(unsigned int nb, unsigned int base, char *array)
+int _putNbBase(unsigned long nb, unsigned long base, char *array)
 {
 	int l;
 

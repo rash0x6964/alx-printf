@@ -20,7 +20,7 @@ int _putchar(char c);
 int _putstr(char *s);
 int _putnbr(int nb);
 void _putbinary(unsigned int n, int *len);
-int _putNbBase(unsigned int nb, unsigned int base, char *array);
+int _putNbBase(unsigned long nb, unsigned long base, char *array);
 
 
 #endif
