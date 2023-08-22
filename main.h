@@ -19,6 +19,7 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int _putstr(char *s);
 int _putnbr(int nb);
+void _putbinary(unsigned int n, int *len);
 
 #endif
 

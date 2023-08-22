@@ -21,6 +21,8 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 		len = _putchar('%');
 	else if (str[loc->i] == 'd' || str[loc->i] == 'i')
 		len = _putnbr(va_arg(argp, int));
+	else if (str[loc->i] == 'b')
+		_putbinary(va_arg(argp, unsigned int), &len);
 	else
 	{
 		len = _putchar('%');
