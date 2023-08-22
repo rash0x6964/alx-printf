@@ -13,8 +13,6 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 
 	len = 0;
 
-	if (!str[loc->i])
-		return (-1);
 	if (str[loc->i] == 'c')
 		len = _putchar(va_arg(argp, int));
 	else if (str[loc->i] == 's')
@@ -34,7 +32,6 @@ int _printf(const char *format, ...)
 {
 	va_list		argp;
 	t_locals	loc;
-	int res;
 
 	va_start(argp, format);
 
@@ -48,10 +45,12 @@ int _printf(const char *format, ...)
 		if (format[loc.i] == '%')
 		{
 			loc.i++;
-			res = checks(argp, format, &loc);
-			if (res == -1)
+			if (!format[loc.i])
+			{
+				va_end(argp);
 				return (-1);
-			loc.glen += res;
+			}
+			loc.glen += checks(argp, format, &loc);
 		}
 		else
 		{
