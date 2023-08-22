@@ -33,7 +33,7 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 		len = _putNbBase(va_arg(argp, unsigned int), 16, "0123456789ABCDEF");
 	else if (str[loc->i] == 'p')
 	{
-		len = ft_putstr("0x");
+		len = _putstr("0x");
 		len += _putNbBase(va_arg(argp, unsigned long), 16, "0123456789abcdef");
 	}
 	else
