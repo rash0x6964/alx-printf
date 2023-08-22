@@ -23,6 +23,14 @@ static int	checks(va_list	argp, const char *str, t_locals *loc)
 		len = _putnbr(va_arg(argp, int));
 	else if (str[loc->i] == 'b')
 		_putbinary(va_arg(argp, unsigned int), &len);
+	else if (str[loc->i] == 'o')
+		len = _putNbBase(va_arg(argp, unsigned int), 8, "01234567");
+	else if (str[loc->i] == 'u')
+		len = _putNbBase(va_arg(argp, unsigned int), 10, "0123456789");
+	else if (str[loc->i] == 'x')
+		len = _putNbBase(va_arg(argp, unsigned int), 16, "0123456789abcdef");
+	else if (str[loc->i] == 'X')
+		len = _putNbBase(va_arg(argp, unsigned int), 16, "0123456789ABCDEF");
 	else
 	{
 		len = _putchar('%');
